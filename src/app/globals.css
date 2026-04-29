@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #00A86B;
+  --color-brand-primary-dark: #007A4D;
+  --color-brand-primary-light: #E8F8F2;
+  --color-brand-secondary: #1E3A5F;
+  --color-brand-secondary-light: #2D5F9E;
+  --color-accent-yellow: #FFB800;
+  --color-accent-orange: #FF6B35;
+  
+  --background-hero: linear-gradient(135deg, #1E3A5F 0%, #0D1F3C 100%);
+  --background-calculator: linear-gradient(135deg, #00A86B 0%, #007A4D 100%);
+
+  --font-inter: var(--font-inter);
+  --font-poppins: var(--font-poppins);
+}
+
+@utility btn-primary {
+  background-color: var(--color-brand-primary);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition-property: all;
+  transition-duration: 300ms;
+  box-shadow: 0 10px 15px -3px rgba(0, 168, 107, 0.2);
+
+  @media (min-width: 768px) {
+    width: auto;
+  }
+
+  &:hover {
+    background-color: var(--color-brand-primary-dark);
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+}
+
+@utility container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@utility bottom-nav-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+:root {
+  --foreground-rgb: 17, 24, 39;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: white;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), sans-serif;
+  color: var(--color-brand-secondary);
+}
+
+h1 {
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(22px, 3.5vw, 40px);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: 600;
+}
+
+button, a {
+  min-height: 44px;
+  min-width: 44px;
+}
